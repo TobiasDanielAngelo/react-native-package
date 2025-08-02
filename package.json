@@ -1,0 +1,75 @@
+{
+  "name": "@danieltobias/react-native-lib",
+  "version": "0.1.0",
+  "description": "A reusable React Native component library",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "author": "Daniel Angelo Tobias",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TobiasDanielAngelo/react-native-package.git"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "library",
+    "ui"
+  ],
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "@react-native-community/datetimepicker": "^8.4.2",
+    "@types/react-native-table-component": "^1.2.8",
+    "expo-document-picker": "^13.1.6",
+    "expo-image-picker": "^16.1.4",
+    "expo-linear-gradient": "^14.1.5",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.6.0",
+    "react-native-calendars": "^1.1313.0",
+    "react-native-chart-kit": "^6.12.0",
+    "pluralize": "^8.0.0",
+    "rrule": "^2.8.1",
+    "react-native-dropdown-picker": "^5.4.6",
+    "date-fns": "^4.1.0",
+    "lz-string": "^1.5.0"
+  },
+  "peerDependencies": {
+    "expo": "~53.0.17",
+    "expo-status-bar": "~2.2.3",
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-svg": "^15.12.0",
+    "react-native-elements": "^3.4.3",
+    "react": "^19.1.0",
+    "react-native": "0.79.5",
+    "react-router-native": "^6.30.0",
+    "mobx": "^6.13.7",
+    "mobx-react-lite": "^4.1.0",
+    "mobx-keystone": "^1.11.4"
+  },
+  "devDependencies": {
+    "expo": "~53.0.17",
+    "expo-status-bar": "~2.2.3",
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-svg": "^15.12.0",
+    "react-native-elements": "^3.4.3",
+    "react": "^19.1.0",
+    "react-native": "0.79.5",
+    "react-router-native": "^6.30.0",
+    "mobx": "^6.13.7",
+    "mobx-react-lite": "^4.1.0",
+    "mobx-keystone": "^1.11.4",
+    "@babel/core": "^7.25.2",
+    "@types/react": "~19.0.10",
+    "typescript": "~5.8.3"
+  },
+  "files": [
+    "dist"
+  ]
+}

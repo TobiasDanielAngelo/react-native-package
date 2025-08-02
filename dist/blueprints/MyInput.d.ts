@@ -1,0 +1,23 @@
+export type MyInputProps = {
+    hidden?: boolean;
+    label?: string;
+    value?: string;
+    onChangeValue?: (t: string) => void;
+    corrector?: (t: string) => string;
+    pattern?: string;
+    isPassword?: boolean;
+    optional?: boolean;
+    msg?: string;
+    placeholder?: string;
+    checkpoint?: boolean;
+    checkAction?: () => Promise<void>;
+    disabled?: boolean;
+    flex?: number;
+    numeric?: boolean;
+    centered?: boolean;
+    maxLength?: number;
+    autoCapitalize?: boolean;
+    enlarged?: boolean;
+    multiline?: boolean;
+};
+export declare const MyInput: (props: MyInputProps) => import("react/jsx-runtime").JSX.Element;
