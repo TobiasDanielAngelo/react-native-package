@@ -15,7 +15,26 @@ import {
   MyTextArea,
 } from "./";
 import { MyIcon } from "./MyIcon";
-import { Text, View } from "react-native";
+import { KeyboardType, Text, View } from "react-native";
+import { HTMLInputTypeAttribute } from "react";
+
+const typeToKeyboardType = (t: HTMLInputTypeAttribute): KeyboardType => {
+  switch (t) {
+    case "email":
+      return "email-address";
+    case "number":
+    case "tel":
+      return "numeric";
+    case "url":
+      return "url";
+    case "text":
+    case "search":
+    case "password":
+    case "datetime-local":
+    default:
+      return "default";
+  }
+};
 
 const getMsg = (msg: any, name: string) =>
   msg && !`${msg[name as keyof Object]}`.includes("undefined")
@@ -46,8 +65,6 @@ const renderField = (
           <Text style={{ textAlign: "center" }}>{t.function?.(details)}</Text>
         </View>
       );
-    case "password":
-      return <MyInput key={key} {...commonProps} isPassword />;
     case "select":
       return (
         <MyDropdownSelector key={key} {...commonProps} options={t.options} />
@@ -101,13 +118,21 @@ const renderField = (
           key={key}
         />
       );
+    case "email":
     case "number":
+    case "tel":
+    case "url":
     case "text":
+    case "search":
+    case "password":
+    case "datetime-local":
       return (
         <MyInput
           key={key}
           {...commonProps}
           value={details[t.name] ?? ""}
+          type={typeToKeyboardType(t.type)}
+          isPassword={t.type === "password"}
           centered={t.centered}
         />
       );

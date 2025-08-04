@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { KeyboardType, StyleSheet, Text, TextInput, View } from "react-native";
 import { winWidth } from "../constants/constants";
 import { MyIcon } from "./MyIcon";
 
@@ -24,6 +24,7 @@ export type MyInputProps = {
   autoCapitalize?: boolean;
   enlarged?: boolean;
   multiline?: boolean;
+  type?: KeyboardType;
 };
 
 export const MyInput = (props: MyInputProps) => {
@@ -34,6 +35,7 @@ export const MyInput = (props: MyInputProps) => {
     onChangeValue,
     corrector,
     isPassword,
+    type,
     // optional,
     msg,
     placeholder,
@@ -83,7 +85,7 @@ export const MyInput = (props: MyInputProps) => {
             ]}
             editable={editable && !disabled}
             placeholder={placeholder ?? label}
-            keyboardType={numeric ? "numeric" : "default"}
+            keyboardType={type}
             maxLength={maxLength}
             autoCapitalize={autoCapitalize ? "characters" : undefined}
             secureTextEntry={isPassword}
